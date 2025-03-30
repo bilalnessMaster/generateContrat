@@ -86,3 +86,5 @@ const CreateContrat = () => {
 }
 
 export default CreateContrat;
+
+
