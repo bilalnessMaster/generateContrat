@@ -2,6 +2,8 @@
 import { useDroppable } from '@dnd-kit/core';
 import React from 'react'
 import Contrat from './Contrat';
+import { cn } from '@/utils/cn';
+
 
 const Column = ({header, contrats} : {header : string , contrats : any}) => {
     const {isOver, setNodeRef} = useDroppable({
@@ -10,22 +12,23 @@ const Column = ({header, contrats} : {header : string , contrats : any}) => {
       const style = {
         color: isOver ? 'green' : undefined,
       };
-      const filterArray = contrats.filter((contrat: any)=> contrat.status === header)
+      // const filterArray = contrats.filter((contrat: any)=> contrat.statut === header)
+      // const totalBudgets = contrats.reduce((contrat: any)=> contrat.status === header)
       // console.log(filterArray);
       
   return (
     <div
     ref={setNodeRef}
     style={style}
-    className='min-h-xl mt-4'
+    className='min-h-[900px] mt-4 space-y-3'
     >
       <div>
-        <h1 className='capitalize font-sans font-medium w-fit px-3 py-px rounded-full text-neutral-600 bg-neutral-100'>{header}</h1>
+        <h1 className={cn('capitalize font-sans font-medium w-fit px-3 py-px rounded-full text-neutral-600 bg-neutral-100')}>{header}</h1>
       </div>
-      <div className='grid'>
+      <div className='grid gap-2'>
         {
-        filterArray.map((item: any)=>(
-          <Contrat key={item.id} id={item.id}/>
+        contrats?.map((item: any)=>(
+          <Contrat {...item} key={item.id} id={item.id}/>
       ))
       }
       </div>

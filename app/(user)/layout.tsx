@@ -7,7 +7,7 @@ const layout = ({children} : {children: React.ReactNode}) => {
       <section className='w-73 h-full'>
         <Navbar />
       </section>
-      <section className='flex-grow h-full'>
+      <section className='flex-grow h-full overflow-y-auto'>
         {children}
       </section>
     </main>

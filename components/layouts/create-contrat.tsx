@@ -5,10 +5,10 @@ import { AnimatePresence, motion } from 'motion/react'
 const CreateContrat = () => {
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <>
-            <button onClick={() => setIsOpen(!isOpen)} className='font-amoera text-lg inline-flex items-center  gap-1 cursor-pointer justify-center'>
-                <span className='bg-brown-100/75 text-brown-400 w-28 text-xl h-8 flex items-center justify-center rounded-full '>
-                    créer
+        <main>
+            <button onClick={() => setIsOpen(!isOpen)} className='font-amoera text-lg flex items-center h-12  gap-1 cursor-pointer justify-center'>
+                <span className='bg-brown-100/75 text-brown-400 flex items-center h-8  w-32 justify-center rounded-full '>
+                    <span className=''>creer</span>
                 </span>
                 <span className='size-8 inline-flex rounded-full bg-brown-300 items-center justify-center'>
                     <i className="hgi hgi-stroke hgi-add-01 text-brown-50 text-lg"></i>
@@ -81,7 +81,7 @@ const CreateContrat = () => {
                             </form>
                         </motion.div>)}
             </AnimatePresence>
-        </>
+        </main>
     )
 }
 
