@@ -28,5 +28,5 @@ model contrat {
     téléphone       String 
     createdAt       DateTime   @default(now())
     updatedAt       DateTime   @updatedAt
-    statut          String
+    statut          String?    @default("à contacter")
 }

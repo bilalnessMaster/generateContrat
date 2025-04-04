@@ -10,7 +10,7 @@ import { contrat } from '@prisma/client'
 
 const Page = () => {
   const [contrats, setContrats] = useState<contrat[]>([])
-  const {data :initialContratsd , isLoading } = useQuery({
+  const {data :initialContrat , isLoading } = useQuery({
     queryKey : ['contrats'] , 
     queryFn : async () =>{
       const {data} = await axios.get('/api/getContrats')
@@ -25,7 +25,8 @@ const Page = () => {
       },
     })
   );
-  useEffect(()=> setContrats(initialContratsd?.contrats), [initialContratsd])
+  useEffect(()=> setContrats(initialContrat?.contrats), [initialContrat])
+
 
   const handleOver = async (event: DragEndEvent) => {
     const {active, over} = event
@@ -45,9 +46,9 @@ const Page = () => {
       })
     )
   }
-  console.log(initialContratsd?.contrats);
+  console.log(contrats);
   
-  if(!initialContratsd?.contrats) return null;
+  if(!initialContrat?.contrats) return null;
   return (
     <div className='overflow-y-auto'>
       <section className='w-full h-14 border-b border-brown-100/40 flex items-center px-6'>

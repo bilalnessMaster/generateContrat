@@ -12,12 +12,12 @@ const links = [
         href: "/contrats",
         icon: "hgi hgi-stroke hgi-seal"
     },
-    {
-        id: 1,
-        name: 'Clients',
-        href: "/clients",
-        icon: "hgi hgi-stroke hgi-link-04"
-    }
+    // {
+    //     id: 1,
+    //     name: 'Clients',
+    //     href: "/clients",
+    //     icon: "hgi hgi-stroke hgi-link-04"
+    // }
 ]
 const Navbar = () => {
     return (
