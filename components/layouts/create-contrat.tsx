@@ -11,7 +11,7 @@ const CreateContrat = () => {
         <main>
             <button onClick={() => setIsOpen(!isOpen)} className='font-amoera text-lg flex items-center h-12  gap-1 cursor-pointer justify-center'>
                 <span className='bg-brown-100/75 text-brown-400 flex items-center h-8  w-32 justify-center rounded-full '>
-                    <span className=''>creer</span>
+                    <span className='font-sans uppercase text-base'>creer</span>
                 </span>
                 <span className='size-8 inline-flex rounded-full bg-brown-300 items-center justify-center'>
                     <i className="hgi hgi-stroke hgi-add-01 text-brown-50 text-lg"></i>

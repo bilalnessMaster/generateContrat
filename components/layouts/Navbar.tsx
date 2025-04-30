@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import Logout from '../Logout'
 const links = [
     {
         id: 1,
@@ -36,7 +37,7 @@ const Navbar = () => {
                     }
                 </section>
                 <section className='h-14 border-t w-full border-brown-100/40 px-6 flex items-center' >
-                    11
+                     <Logout />
                 </section>
             </nav>
         </aside>
