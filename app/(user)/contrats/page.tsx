@@ -1,16 +1,24 @@
 'use client'
 import Column from '@/components/drag and drop/column'
 import CreateContrat from '@/components/layouts/create-contrat'
-import { DndContext, DragEndEvent, PointerSensor, UniqueIdentifier, useSensor, useSensors } from '@dnd-kit/core'
+import { DndContext, DragEndEvent, PointerSensor, useSensor, useSensors } from '@dnd-kit/core'
 import { useQuery } from '@tanstack/react-query'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios' ;
-import { contrat } from '@prisma/client'
 
+interface contratsProps { 
+  typeEntreprise: "petite" | "moyenne" | "grande";
+    nomEntreprise: string;
+    budget: number;
+    id: number;
+    propriétaire: string;
+    createdAt: string;
+    statut ? : string
+}
 
 const Page = () => {
-  const [contrats, setContrats] = useState<contrat[]>([])
-  const {data :initialContrat , isLoading } = useQuery({
+  const [contrats, setContrats] = useState<contratsProps[]>([])
+  const {data :initialContrat  } = useQuery({
     queryKey : ['contrats'] , 
     queryFn : async () =>{
       const {data} = await axios.get('/api/getContrats')

@@ -1,7 +1,6 @@
 'use client'
 import { logIn } from "@/utils/actions";
-import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+
 import { useActionState } from "react";
 
 export default function Home() {
@@ -26,6 +25,11 @@ export default function Home() {
             <input type="text" id='password' name='password' className='w-full h-full focus:border-none border-brown border bg-white outline-none pl-4 text-sm font-normal ' placeholder="N8fWIh1V-YM" />
           </label>
         </div>
+        {
+          errorMessage && <p className="text-base text-red-500">
+            {errorMessage}
+          </p>
+        }
         <input type="hidden" defaultValue={'http://localhost:3000/contrats'} name="redirectTo" />
         <button disabled={isPending} className="bg-brown-500 text-brown-50 w-full h-10  font-amoera font-medium cursor-pointer" type="submit">
           {

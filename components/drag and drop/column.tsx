@@ -3,9 +3,16 @@ import { useDroppable } from '@dnd-kit/core';
 import React from 'react'
 import Contrat from './Contrat';
 import { cn } from '@/utils/cn';
+interface contratsProps { 
+  typeEntreprise: "petite" | "moyenne" | "grande";
+    nomEntreprise: string;
+    budget: number;
+    id: number;
+    propriétaire: string;
+    createdAt: string;
+}
 
-
-const Column = ({header, contrats} : {header : string , contrats : any}) => {
+const Column = ({header, contrats} : {header : string , contrats : contratsProps[]}) => {
     const {isOver, setNodeRef} = useDroppable({
         id: header,
       });
@@ -27,7 +34,7 @@ const Column = ({header, contrats} : {header : string , contrats : any}) => {
       </div>
       <div className='grid gap-2'>
         {
-        contrats?.map((item: any)=>(
+        contrats?.map((item: contratsProps)=>(
           <Contrat {...item} key={item.id} id={item.id}/>
       ))
       }

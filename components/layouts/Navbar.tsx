@@ -47,7 +47,7 @@ const Navbar = () => {
 export default Navbar
 
 
-const LinkComponent = ({ name, href, index, icon }: { name: string, href: string, index: number, icon: string }) => {
+const LinkComponent = ({ name, href, index }: { name: string, href: string, index: number, icon: string }) => {
     const pathName = usePathname()
     console.log(pathName);
     

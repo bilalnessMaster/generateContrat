@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import { useSession , signOut} from "next-auth/react"
-import { LogOut } from 'lucide-react'
+
 const Logout = () => {
     const { data: session } = useSession()
     console.log(session);
